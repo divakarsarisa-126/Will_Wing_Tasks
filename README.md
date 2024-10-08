@@ -1,4 +1,4 @@
-# Will_Wing_Tasks
+# Will_Wing_Tasks --08/10/2024
 #_(1)Program 1: Create a class with a method which can calculate the sum of first n natural numbers which are divisible by 3 or 5.
 
 Method Name 	calculateSum 
