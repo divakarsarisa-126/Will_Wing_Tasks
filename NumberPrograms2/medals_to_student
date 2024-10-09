@@ -1,12 +1,11 @@
 package Task_WW2;
-
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class MedalstoStudents {
 
-    public static HashMap<Integer, String> getStudents(HashMap<Integer,Integer> studentmarks) {
-        HashMap<Integer, String> StudentMedals = new HashMap<>();
+ public static HashMap<Integer, String> getStudents(HashMap<Integer,Integer> studentmarks) {
+   HashMap<Integer, String> StudentMedals = new HashMap<>();
         for(Integer RegNum : studentmarks.keySet()) {
             int marks = studentmarks.get(RegNum);
             if(marks >= 90) {
@@ -18,29 +17,29 @@ public class MedalstoStudents {
             }
         }
         return StudentMedals;
-    }
+}
 
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        HashMap<Integer, Integer> Studentmarks = new HashMap<>();
+ public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+     HashMap<Integer, Integer> Studentmarks = new HashMap<>();
         
-        System.out.println("Enter the Number of students:");
-        int numofStudent = scan.nextInt();
+    System.out.println("Enter the Number of students:");
+    int numofStudent = scan.nextInt();
 
-        for (int i = 0; i < numofStudent; i++) {
-            System.out.println("Enter registration number: ");
-            int regNum = scan.nextInt();
-            System.out.println("Enter marks: ");
-            int marks = scan.nextInt();
-            Studentmarks.put(regNum, marks);
-        }
-
-        MedalstoStudents awards = new MedalstoStudents();
-        HashMap<Integer, String> result = awards.getStudents(Studentmarks);
-
-        System.out.println("Medal Awards: ");
-        for (Integer regNum : result.keySet()) {
-            System.out.println("Reg Num: " + regNum + ", Medal: " + result.get(regNum));
-        }
+    for (int i = 0; i < numofStudent; i++) {
+        System.out.println("Enter registration number: ");
+        int regNum = scan.nextInt();
+        System.out.println("Enter marks: ");
+        int marks = scan.nextInt();
+        Studentmarks.put(regNum, marks);
     }
+
+    MedalstoStudents awards = new MedalstoStudents();
+    HashMap<Integer, String> result = awards.getStudents(Studentmarks);
+
+    System.out.println("Medal Awards: ");
+    for (Integer regNum : result.keySet()) {
+        System.out.println("Reg Num: " + regNum + ", Medal: " + result.get(regNum));
+    }
+  }
 }
