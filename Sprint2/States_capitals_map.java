@@ -12,9 +12,9 @@ import java.util.Map;
 
        Map<String, String> stateCapitalMap = getStates(data, del1, del2);
 
-        System.out.println("States and Capitals:");
+        System.out.println("States and Capitals Map:");
         for (Map.Entry<String, String> entry : stateCapitalMap.entrySet()) {
-            System.out.println("State: " + entry.getKey() + " & Capital: " + entry.getValue());
+            System.out.println(  entry.getKey() + " ---> " + entry.getValue());
         }
         }
 
