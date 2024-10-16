@@ -8,11 +8,11 @@ public class Voters_eligibility {
 
     public static void main(String[] args) {
       Map<String, String> people = new HashMap<>();
-	     people.put("id1","10/10/2000");
-	     people.put("id10","10/10/2003");
-	     people.put("id3","12/04/2015");
-	     people.put("id13","12/04/2004");
-	     people.put("id12","12/04/2015");
+	     people.put("id1","16/10/2006");
+	     people.put("id10","10/10/2015");
+	     people.put("id3","12/04/2006");
+	     people.put("id13","12/04/2015");
+	     people.put("id12","12/04/2006"); 
 
         List<String> eligibleVoters = votersList(people);
        System.out.println("Eligible voters: " + eligibleVoters);
@@ -21,6 +21,7 @@ public class Voters_eligibility {
     public static List<String> votersList(Map<String, String> people) {
         List<String> eligibleVoters = new ArrayList<>();
         SimpleDateFormat dfmt = new SimpleDateFormat("dd/MM/yyyy");
+        
         Calendar today = Calendar.getInstance();
 
         for (Map.Entry<String, String> entry : people.entrySet()) {
@@ -31,12 +32,15 @@ public class Voters_eligibility {
               Date dateOfBirth = dfmt.parse(dob);
               Calendar dobCalendar = Calendar.getInstance();
               dobCalendar.setTime(dateOfBirth);
+              
 
               int age = today.get(Calendar.YEAR) - dobCalendar.get(Calendar.YEAR);
-
-               if (today.get(Calendar.DAY_OF_YEAR) < dobCalendar.get(Calendar.DAY_OF_YEAR)) {
-                  age--;
-               }
+              if (today.get(Calendar.MONTH) < dobCalendar.get(Calendar.MONTH) || 
+                      (today.get(Calendar.MONTH) == dobCalendar.get(Calendar.MONTH) && 
+                      today.get(Calendar.DAY_OF_MONTH) < dobCalendar.get(Calendar.DAY_OF_MONTH))) {
+                      age--;
+                  }
+               
 
                if (age >= 18) {
                   eligibleVoters.add(id);
