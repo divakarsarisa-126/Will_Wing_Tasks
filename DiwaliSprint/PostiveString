@@ -1,0 +1,18 @@
+package DiwaliSprint;
+
+public class String_positive {
+
+	public static boolean checkPositive(String Str1) {
+		
+		for(int i=0;i<Str1.length()-1;i++) {
+			if(Str1.charAt(i)>=Str1.charAt(i+1)) {
+				return false;
+			}
+		}
+		return true;
+		
+	}
+	public static void main(String[] args) {
+		System.out.println(checkPositive("ABCA"));
+	}
+}
